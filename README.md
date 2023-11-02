@@ -6,7 +6,7 @@ AS a freelance web developer
 I WANT to generate a simple logo for my projects
 SO THAT I don't have to pay a graphic designer
 
-##
+## Acceptance Criteria
 
 GIVEN a command-line application that accepts user input
 WHEN I am prompted for text
@@ -22,3 +22,21 @@ THEN an SVG file is created named `logo.svg`
 AND the output text "Generated logo.svg" is printed in the command line
 WHEN I open the `logo.svg` file in a browser
 THEN I am shown a 300x200 pixel image that matches the criteria I entered
+
+## Mock Up
+
+https://github.com/mradison/SVG-logo-maker-object-oriented
+
+https://mradison.github.io/SVG-logo-maker-object-oriented/
+
+https://drive.google.com/file/d/1e7e0UB8Q79H6Xzmdf7pI-o7ZnHFmRjBL/view
+
+## Notes
+
+Here are some websites I used to help me with my assignment: (I also got help from my instructor, TA and Tutor):
+
+https://www.w3schools.com/graphics/svg_intro.asp
+
+I also went back to previous assignments and activities to get tips on how to code this assignment. 
+
+I also go help from classmates that were working on the same project. 
