@@ -1,5 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateSVG = require('./generateSVG');
+const {Circle, Polygon, Rect} = require('./lib/shapes');
 
 function startPrompts() {
     inquirer
@@ -21,8 +23,8 @@ function startPrompts() {
             },
             {
                 type: 'input',
-                name: 'backgroundColor',
-                message: 'What color do you want the background to be?',
+                name: 'textColor',
+                message: 'What color do you want the text to be?',
                 validate: (value) => {
                     if (value) return true
                     else return 'Please input a value to continue'
@@ -30,7 +32,7 @@ function startPrompts() {
             },
             {
                 type: 'input',
-                name: 'text',
+                name: 'nameSVG',
                 message: 'What do you want the text to be for the SVG? (cannot be more than 3 characters)',
                 validate: (value) => {
                     if (value.length > 3) return 'Please make sure the text is less than 3 characters'
@@ -38,14 +40,10 @@ function startPrompts() {
                 },
             }
         ])
-        .then((data) => {
-            const fileName = `${data.name.toLowerCase().split(' ').join('')}.svg`;
 
-            fs.writeFile(fileName, generateMarkdown(data), (err) =>
-                err ? console.log(err) : console.log('Success!')
-            );
-        })
+
 }
+
 
 function init() {
     startPrompts();
