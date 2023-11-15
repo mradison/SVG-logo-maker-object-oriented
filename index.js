@@ -10,7 +10,7 @@ function startPrompts() {
                 type: 'list',
                 name: 'shape',
                 message: 'What shape do you want your SVG to be?',
-                choices: ['Circle', 'Square', 'Triangle'],
+                choices: ['Circle', 'Rect', 'Polygon'],
             },
             {
                 type: 'input',
@@ -40,6 +40,15 @@ function startPrompts() {
                 },
             }
         ])
+        .then((data) => {
+            const fileName = `${data.nameSVG.toLowerCase().split(' ').join('')}.svg`;
+
+            console.log(data);
+
+            fs.writeFile(fileName, generateSVG(data), (err) =>
+                err ? console.log(err) : console.log('Congratulations! You have succesfully created a SVG!')
+            );
+        })
 
 
 }

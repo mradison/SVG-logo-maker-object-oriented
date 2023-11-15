@@ -1,45 +1,29 @@
-// let data = require('./index');
+const {Circle, Polygon, Rect} = require('./lib/shapes');
 
-// function writeToFile (fileName, data) {
-//     let logo = '<svg width="300" height="300"'
-
-//     logo += `${data.shape}`
-
-//     let Choice;
-//     if(data.shape === "Circle"){
-//         Choice = new Circle();
-//         logo += `<circle cx=150 cy=150 r="75" fill="${data.shapeColor}"/>`
-//     } else if (data.shape === "Triangle") {
-//         Choice = new Triangle();
-//         logo += `<polygon points="140,15 225,170 66,170" fill="${data.shapeColor}"/>`;
-//     } else {
-//         Choice = new Square();
-//         logo += `<rect x="60" y="30" width="175" height="175" fill="${data.shapeColor}"/>`;
-//     }
-    
-//     logo += `<text fill=${data.textColor} x="120" y="50">${data.nameSVG}</text>`;
-
-//     logo += `</svg>`; 
-
-//     fs.writeFile(fileName, logo, (err) =>
-//         err ? console.log(err) : console.log('SVG created!')
-//      );
-//      return 
-// }
+function generateSVG(data) {
+    let svg;
+    switch (data.shape) {
+        case 'Circle':
+        svg= `<svg height="100" width="100">
+        <${data.shape} cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="${data.shapeColor}" /><text x="50%" y="50%" text-anchor="middle" stroke=${data.textColor} stroke-width="2px" dy=".3em">${data.nameSVG}</text>
+      </svg>`
+            
+            break;
+        case 'Polygon':
+            svg=`<svg height="210" width="500">
+            <polygon points="200,10 250,190 160,210" style="fill: ${data.shapeColor}; stroke:purple; stroke-width:1"/><text x="203" y="135" text-anchor="middle" fill=${data.textColor} font-size="30">${data.nameSVG}</text>
+          </svg>`
 
 
-// writeToFile();
+        case 'Rect':
+                svg=`<svg width="200" height="200">
+                <${data.shape} width="100" height="100" style="fill:${data.shapeColor};stroke:rgb(0,0,0)" /> <text fill=${data.textColor} x="40" y="50">${data.nameSVG}</text>
+              </svg>`
+        default:
+            break;
+    }
 
+    return svg
+}
 
-// // const {Circle, Polygon, Rect} = require('./lib/shapes');
-
-// // function generateSVG(data) {
-// //     `<svg width="300" height="300">
-// //     <${data.shape} x="50" y="20" width="150 height="150" fill="${data.shapeColor}"/>
-// //         <text fill=${data.textColor} x="120" y="50">${data.nameSVG}</text>
-// //     </svg>`
-
-// //     return 
-// // }
-
-// // module.exports = generateSVG; 
+module.exports = generateSVG; 

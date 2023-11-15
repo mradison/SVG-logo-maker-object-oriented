@@ -23,11 +23,13 @@ AND the output text "Generated logo.svg" is printed in the command line
 WHEN I open the `logo.svg` file in a browser
 THEN I am shown a 300x200 pixel image that matches the criteria I entered
 
-## Mock Up
+## Mock Up and Video of working application
 
 https://github.com/mradison/SVG-logo-maker-object-oriented
 
 https://mradison.github.io/SVG-logo-maker-object-oriented/
+
+https://drive.google.com/file/d/1e7e0UB8Q79H6Xzmdf7pI-o7ZnHFmRjBL/view
 
 https://drive.google.com/file/d/1e7e0UB8Q79H6Xzmdf7pI-o7ZnHFmRjBL/view
 
