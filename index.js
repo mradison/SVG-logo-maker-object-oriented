@@ -46,7 +46,7 @@ function startPrompts() {
             console.log(data);
 
             fs.writeFile(fileName, generateSVG(data), (err) =>
-                err ? console.log(err) : console.log('Congratulations! You have succesfully created a SVG!')
+                err ? console.log(err) : console.log('Generated logo.svg')
             );
         })
 

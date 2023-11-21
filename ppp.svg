@@ -1,0 +1,3 @@
+<svg height="300" width="200">
+        <Circle cx="100" cy="150" r="90" stroke="black" stroke-width="3" fill="green" /><text x="50%" y="50%" text-anchor="middle" stroke=red stroke-width="2px" dy=".3em">ppp</text>
+      </svg>
